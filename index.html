@@ -17,7 +17,7 @@
 		<form>
 			<input id="upload" type="file" accept=".save, .game, .json">
 			<hr>
-			<button id="generateNewSave" onclick="writeFileOut(saveDataOutput)">Generate New Save</button>
+			<button id="generateNewSave" type="button">Generate New Save</button>
 		</form>
 	</div>
 	<div class="accordion">
@@ -45,7 +45,7 @@
     		</h2>
     	    <div id="collapseTwo" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
       			<div class="accordion-body">
-        		<select id="save.m_Difficulty.m_ButcherGangStatus">
+        		<select id="save.m_Difficulty.m_Difficulty">
 					<option  value="0">Easy</option>
 					<option  value="1">Medium</option>
 					<option  value="3">Hard</option>
@@ -53,7 +53,7 @@
 				</select><br>
 				<label for="save.m_Difficulty.m_DifficultyChanged">difficulty changed?</label><input type="checkbox" name="save.m_Difficulty.m_DifficultyChanged"><br>
 				Butcher Gang Status:
-				<select id="save.m_Difficulty.">
+				<select id="save.m_Difficulty.m_ButcherGangStatus">
 					<option  value="0">inactive</option>
 					<option  value="1">Active</option>
 					<option  value="2">Butcher</option>
@@ -114,7 +114,7 @@
 						<option  value="400">Stun Pipe</option>
 					</select><br>
 					GENT Pipe Charge Level:<input type="number" id="save.m_PlayerData.m_WeaponData.m_Power"><br>
-					Abilitys<br>
+					Abilities<br>
 					Status:<br>
 					<select id="save.m_PlayerData.m_AbilityDirectory.m_AbilityStatus">
 						<option  value="0">None</option>
