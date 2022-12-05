@@ -1,8 +1,8 @@
 let saveDataOutput;
 $( document ).ready(function(){
-    //fetch('./Saves/autosave(22).save').then(response => response.json()).then( data=> getSaveData(data));
-    //fetch('./Saves/newgame_9.save').then(response => response.json()).then( data=> getSaveData(data));
+    fetch('./Other/autosave.save').then(response => response.json()).then( data=> {saveDataOutput = data; getSaveData(data);});
     document.getElementById('upload').addEventListener('change', handleFileSelect, false);
+    
     }
 );
 function handleFileSelect(e) {
@@ -17,6 +17,19 @@ function handleFileSelect(e) {
         }
     })(f);
     reader.readAsText(f);
+}
+function writeFileOut(data) {
+    let file = new File([JSON.stringify(data)], 'autosave.save', {type:'text/plain'});
+    const link = document.createElement('a');
+    const url = URL.createObjectURL(file);
+
+    link.href = url;
+    link.download = file.name
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    window.URL.revokeObjectURL(url);
+
 }
 function getSaveData(data) {
 
