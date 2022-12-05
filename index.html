@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<script type="text/javascript" src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+
+	<script type="text/javascript" src="./JS/editor.js"></script>
+	<link rel="stylesheet" type="text/css" href="./CSS/style.css">
+	<title></title>
+</head>
+<body>
+	<div class="container">
+	<div id="Options">
+		<form>
+			<input id="upload" type="file" accept=".save, .game, .json">
+			<hr>
+			<button>Create New Save</button>
+		</form>
+	</div>
+	<div class="accordion">
+		<div class="accordion-item">
+
+		</div>
+		<div class="accordion-item" id="m_ID">
+			<h2 class="accordion-header" id="headingOne">
+    			<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+    				ID
+    			</button>
+    		</h2>
+    	    <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+      			<div class="accordion-body">
+        			<input type="text" id="save.m_ID">
+      		</div>
+
+		</div>
+		<div class="accordion-item" id="m_difficulty">
+		
+			<h2 class="accordion-header" id="headingOne">
+    			<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+    				m_Difficulty
+    			</button>
+    		</h2>
+    	    <div id="collapseTwo" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+      			<div class="accordion-body">
+        		<select id="save.m_Difficulty.m_ButcherGangStatus">
+					<option  value="0">Easy</option>
+					<option  value="1">Medium</option>
+					<option  value="3">Hard</option>
+					<option  value="10">Impossible</option>
+				</select><br>
+				<label for="save.m_Difficulty.m_DifficultyChanged">difficulty changed?</label><input type="checkbox" name="save.m_Difficulty.m_DifficultyChanged"><br>
+				Butcher Gang Status:
+				<select id="save.m_Difficulty.">
+					<option  value="0">inactive</option>
+					<option  value="1">Active</option>
+					<option  value="2">Butcher</option>
+				</select><br>
+				<label for="save.m_Difficulty.m_isNotSocalite">Socalite?</label><input type="checkbox" name="save.isSocalite"><br>
+      		</div>
+
+
+		</div>
+		<div class="accordion-item" id="m_PlayerData">
+			<h2 class="accordion-header" id="headingOne">
+    			<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
+    				Player
+    			</button>
+    		</h2>
+    	    <div id="collapseThree" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+      			<div class="accordion-body">
+        			Transform:<br>
+    				X:<input type="text" id="save.m_PlayerData.m_Transform.m_Position.X"><br>
+    				y:<input type="text" id="save.m_PlayerData.m_Transform.m_Position.Y"><br>
+    				z:<input type="text" id="save.m_PlayerData.m_Transform.m_Position.Z"><br>
+    				Rotation<input type="text" id="save.m_PlayerData.m_Transform.m_Rotation"><br>
+    				Head Rotation<input type="text" id="save.m_PlayerData.m_Transform.m_HeadRotation"><br>
+    				Health:<input type="number" id="save.m_PlayerData.m_Statistics.m_Health"><br>
+    				Deaths(Respawns):<input type="number" id="save.m_PlayerData.m_Statistics.m_Life"><br>
+    				iLife:<input type="number" id="save.m_PlayerData.m_Statistics.m_iLife"><br>
+    				cooldown:<input type="number" id="save.m_PlayerData.m_Statistics.m_Cooldown"><br>
+    				Food:<input type="number" id="save.m_PlayerData.m_Statistics.m_Food"><br>
+    				Slugs:<input type="number" id="save.m_PlayerData.m_Statistics.m_Slugs"><br>
+    				Spent Slugs:<input type="number" id="save.m_PlayerData.m_Statistics.m_Spent"><br>
+    				Cards:<input type="number" id="save.m_PlayerData.m_Statistics.m_Cards"><br>
+    				Toolkits:<input type="number" id="save.m_PlayerData.m_Statistics.m_Toolkits"><br>
+    				Parts:<input type="number" id="save.m_PlayerData.m_Statistics.m_Parts"><br>
+    				battery casings:<input type="number" id="save.m_PlayerData.m_Statistics.m_BatteryCasings"><br>
+    				Batteries:<input type="number" id="save.m_PlayerData.m_Statistics.m_Batteries"><br>
+    				Deposited Batteries:<input type="number" id="save.m_PlayerData.m_Statistics.m_DepositedBatteries"><br>
+    				Crouched?<input type="checkbox" id="save.m_PlayerData.m_Statistics.m_IsCrouched"><br>
+    				Upgrade Level - Health:<input type="number" id="save.m_PlayerData.m_Statistics.m_UpgradeLevelHealth"><br>
+    				Upgrade Level - Stamina:<input type="number" id="save.m_PlayerData.m_Statistics.m_UpgradeLevelStamina"><br>
+    				Upgrade Level - Ability:<input type="number" id="save.m_PlayerData.m_Statistics.m_UpgradeLevelAbility"><br>
+    				Kills:<input type="number" id="save.m_PlayerData.m_Statistics.m_Kills"><br>
+    				Shock Kills:<input type="number" id="save.m_PlayerData.m_Statistics.m_ShockKills"><br>
+    				Banish Kills:<input type="number" id="save.m_PlayerData.m_Statistics.m_BanishKill"><br>
+    				Combat Status:<input type="number" id="save.m_PlayerData.m_Statistics.m_CombatStatus"><br>
+    				weapon<br>
+    				Status: <br>
+    				<select id="save.m_PlayerData.m_WeaponData.m_WeaponStatus">
+						<option  value="0">None</option>
+						<option  value="1">active</option>
+						<option  value="3">Inactive</option>
+					</select><br>
+    				upgrade:         		
+    				<select id="save.m_PlayerData.m_WeaponData.m_WeaponID">
+						<option  value="0">None</option>
+						<option  value="100">Base</option>
+						<option  value="200">Battery Pipe</option>
+						<option  value="300">Shock Pipe</option>
+						<option  value="400">Stun Pipe</option>
+					</select><br>
+					GENT Pipe Charge Level:<input type="number" id="save.m_PlayerData.m_WeaponData.m_Power"><br>
+					Abilitys<br>
+					Status:<br>
+					<select id="save.m_PlayerData.m_AbilityDirectory.m_AbilityStatus">
+						<option  value="0">None</option>
+						<option  value="1">active</option>
+						<option  value="3">Inactive</option>
+					</select><br>
+					banish<input type="checkbox" id="save.m_PlayerData.m_AbilityDirectory.m_Values0" value="0"><br>
+					Flow<input type="checkbox" id="save.m_PlayerData.m_AbilityDirectory.m_Values1" value="1"><br>
+					Fast Travel<input type="checkbox" id="save.m_PlayerData.m_AbilityDirectory.m_Values2" value="2"><br>
+
+
+      		</div>
+		</div>
+		<div class="accordion-item" id="m_DataDirectories">
+			<h2 class="accordion-header" id="headingOne">
+    			<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="true" aria-controls="collapseFour">
+    				Data Directories
+    			</button>
+    		</h2>
+    	    <div id="collapseFour" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+      			<div class="accordion-body">
+        			<div class="accordion" id="SectionDirectory">
+  						<div class="accordion-item" id="m_DataDirectories">
+  						  <h2 class="accordion-header" id="headingSectionDictionary">
+  						      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#dataDictionary-SectionDictionary-map" aria-expanded="true" aria-controls="dataDictionary-SectionDictionary-map">
+    						    Section Dictionary
+    						    </button>
+    						  </h2>
+    						<div id="dataDictionary-SectionDictionary-map" class="accordion-collapse collapse show" aria-labelledby="headingSectionDictionary" data-bs-parent="#SectionDirectory">
+          						<div class="accordion-body">
+          							value
+          						</div>
+          					</div>
+          				</div>
+          				<div class="accordion-item" id="m_DataDirectories">
+  						  <h2 class="accordion-header" id="headingSectionDictionary">
+  						      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#dataDictionary-TaskDictionary" aria-expanded="true" aria-controls="dataDictionary-TaskDictionary">
+    						    Task Dictionary
+    						    </button>
+    						  </h2>
+    						<div id="dataDictionary-TaskDictionary" class="accordion-collapse collapse show" aria-labelledby="headingSectionDictionary" data-bs-parent="#SectionDirectory">
+          						<div class="accordion-body">
+          							
+          						</div>
+          					</div>
+          				</div>
+          			</div>
+      		</div>
+		</div>
+		<div class="accordion-item">
+			<h2 class="accordion-header" id="m_cursorState">
+    			<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="true" aria-controls="collapseFive">
+    				cursor state
+    			</button>
+    		</h2>
+    	    <div id="collapseFive" class="accordion-collapse collapse show" aria-labelledby="" data-bs-parent="#accordionExample">
+      			<div class="accordion-body">
+        		<select id="save.m_CursorState">
+					<option  value="-1">Blue</option>
+					<option  value="414">Cycle</option>
+				</select>
+      		</div>
+		</div>
+	</div>
+	</div>
+</body>
+</html>
